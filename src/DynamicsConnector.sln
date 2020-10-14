@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicsConnector.SqlDb", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicsConnector.SqlDb.Functions", "DynamicsConnector.SqlDb.Functions\DynamicsConnector.SqlDb.Functions.csproj", "{1CC9C630-6A62-4CAE-8E82-49A7847DFF19}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicsConnector.Iconics", "IconicsDynamicsFSConnector\DynamicsConnector.Iconics.csproj", "{36EAC20E-BDDF-44F1-9FC6-C96CB1F04AE8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
