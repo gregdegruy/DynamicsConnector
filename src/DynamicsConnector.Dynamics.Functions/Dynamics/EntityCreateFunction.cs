@@ -43,7 +43,7 @@ namespace DynamicsConnector.Dynamics.Functions.Dynamics
                     throw new ArgumentNullException(nameof(mySbMsg));
                 }  
                 
-                //_dynamicsService = new DynamicsHelper(_credentials.crmorg, _credentials.user, _credentials.password, log);
+                _dynamicsService = new DynamicsHelper(_credentials.crmorg, _credentials.user, _credentials.password, log);
 
                 var message = JsonConvert.DeserializeObject<InstanceCreateMessage>(mySbMsg);
                 IDictionary<string, object> entityDetails = new Dictionary<string, object>();                
