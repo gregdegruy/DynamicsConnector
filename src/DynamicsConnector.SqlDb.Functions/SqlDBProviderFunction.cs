@@ -48,33 +48,33 @@ namespace DynamicsConnector.SqlDb.Functions
             DbAdapter ff = new DbAdapter(dataBaseConnectionString.ConnectionString, logger);
             IDataDestinationProvider dataDestination = new ServiceBusProvider();
 
-            //var dbEntities = ff.GetItems(sourceDataTable);
+            var dbEntities = ff.GetItems(sourceDataTable);
 
-            //if (ConfigurationManager.AppSettings["Update"] != null)
-            //    bool.TryParse(ConfigurationManager.AppSettings["Update"], out update);
+            if (ConfigurationManager.AppSettings["Update"] != null)
+                bool.TryParse(ConfigurationManager.AppSettings["Update"], out update);
 
-            //if (dbEntities.Any())
-            //{
-            //    bool update = (currentTime.Hour == 0);
+            if (dbEntities.Any())
+            {
+                bool update = (currentTime.Hour == 0);
 
-            //    logger.LogInformation($"Starting iterating over Faults, update state is {update}.");
+                logger.LogInformation($"Starting iterating over Faults, update state is {update}.");
 
-            //    foreach (var sourceItem in dbEntities)
-            //    {
-            //        var message = new InstanceCreateMessage(dynamicsEntityName, dynamicsEntityToken, sourceItem, update) { MissingMappingField = missingMappingField };
+                foreach (var sourceItem in dbEntities)
+                {
+                    var message = new InstanceCreateMessage(dynamicsEntityName, dynamicsEntityToken, sourceItem, update) { MissingMappingField = missingMappingField };
 
-            //        try
-            //        {
-            //            await dataDestination.PostDataAsync<InstanceCreateMessage>(message, new string[] { serviceBusConnectionString, "", dynamicsInstanceCreateQueue, "" });
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            logger.LogError(ex.Message);
-            //        }
-            //    }
+                    try
+                    {
+                        await dataDestination.PostDataAsync<InstanceCreateMessage>(message, new string[] { serviceBusConnectionString, "", dynamicsInstanceCreateQueue, "" });
+                    }
+                    catch (Exception ex)
+                    {
+                        logger.LogError(ex.Message);
+                    }
+                }
 
-            //    logger.LogInformation("Iteration over Faults is completed!");
-            //}
+                logger.LogInformation("Iteration over Faults is completed!");
+            }
 
             return;
         }
