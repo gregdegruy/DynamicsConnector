@@ -4,15 +4,12 @@ using Microsoft.Xrm.Sdk.Client;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Sdk.Query;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.Linq;
 using System.Net;
 using System.ServiceModel.Description;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DynamicsConnector.Dynamics
 {

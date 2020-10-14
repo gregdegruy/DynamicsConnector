@@ -45,7 +45,7 @@ namespace DynamicsConnector.SqlDb.Functions
             var currentTime = DateTime.Now;
             logger.LogInformation($"Sql DB Publisher Function has started at {currentTime}");
 
-            //DbAdapter ff = new DbAdapter(dataBaseConnectionString.ConnectionString, logger);
+            DbAdapter ff = new DbAdapter(dataBaseConnectionString.ConnectionString, logger);
             IDataDestinationProvider dataDestination = new ServiceBusProvider();
 
             //var dbEntities = ff.GetItems(sourceDataTable);
