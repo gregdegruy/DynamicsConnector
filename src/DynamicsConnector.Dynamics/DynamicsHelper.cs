@@ -407,8 +407,9 @@ namespace DynamicsConnector.Dynamics
 
                 return ((InsertOptionValueResponse)organizationProxy.Execute(insertOptionValueRequest)).NewOptionValue;
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
+                Logger.LogError("GetDynamicsEntityProperties: " + exception.Message + exception.InnerException ?? "; Inner " + exception.InnerException.Message);
                 return null;
             }
         }
