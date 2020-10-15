@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Net;
@@ -7,12 +6,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using DynamicsConnector.Core.Models;
 using DynamicsConnector.Core.Providers;
-using DynamicsConnector.SqlDb;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 
 namespace DynamicsConnector.SqlDb.Functions
 {
